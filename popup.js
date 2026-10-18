@@ -543,7 +543,7 @@ function importPanel() {
   const report = h('div', { class: 'report', role: 'status' });
   const readFile = async file => { if (file) text.value = await file.text(); };
   const text = h('textarea', {
-    rows: 7, spellcheck: false,
+    rows: 7, spellcheck: false, wrap: 'off',
     placeholder: 'Paste or drop a file: JSON (Cookie-Editor, EditThisCookie, Playwright), Netscape cookies.txt, or a Cookie header string',
     ondragover: e => e.preventDefault(),
     ondrop: e => { e.preventDefault(); readFile(e.dataTransfer.files[0]); },

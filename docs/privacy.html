@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy – Cookie Keeper</title>
+  <meta name="description" content="Cookie Keeper has no servers and never sends your cookies or any other data off your device.">
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <!-- Generated from PRIVACY.md by scripts/build_site.py. Edit PRIVACY.md instead. -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="img/icon.svg" alt=""> Cookie Keeper</a>
+      <nav>
+        <a href="./#features">Features</a>
+        <a href="./#install" class="hide-sm">Install</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="https://github.com/afieif/cookie-keeper">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="doc">
+<h1>Cookie Keeper Privacy Policy</h1>
+<p class="updated">Last updated: October 18, 2026</p>
+<p>Cookie Keeper is a browser extension for viewing, editing, protecting, blocking, importing, exporting and backing up your browser's cookies. This policy explains what data it handles and what it does with that data.</p>
+<p><strong>The short version:</strong> Cookie Keeper has no servers. It never sends your cookies or any other data off your device. It doesn't collect analytics, show ads, or share or sell anything.</p>
+<h2>What data Cookie Keeper handles</h2>
+<p>To do its job, Cookie Keeper reads and changes your browser's cookies. Cookies can contain <strong>authentication information</strong> (such as session tokens that keep you logged in) and <strong>website content</strong>. Cookie Keeper also reads the address of the tab you're viewing, and of the frames embedded in it, so it can show the cookies that belong to that site.</p>
+<p>All of this stays on your device. Cookie Keeper only works with this data when you use the extension, or when you've set up a feature that runs automatically (Protect, Block or scheduled backups, described below).</p>
+<h2>What Cookie Keeper stores</h2>
+<p>Cookie Keeper saves the following with the browser's local extension storage (<code>chrome.storage.local</code>):</p>
+<div class="table"><table><thead><tr><th>Data</th><th>Why</th><th>Contains cookie values?</th></tr></thead><tbody><tr><td>Pinned cookies</td><td>To keep them at the top and out of "Delete all"</td><td>No: only the cookie's name, domain and path</td></tr><tr><td>Protected cookies</td><td>To restore a cookie if a site changes or deletes it</td><td><strong>Yes</strong>: a copy of the protected cookie</td></tr><tr><td>Block rules</td><td>To delete cookies you've blocked</td><td>No: only a domain and a cookie name</td></tr><tr><td>Backups</td><td>To let you restore cookies later</td><td><strong>Yes</strong>: copies of your cookies (incognito cookies are never backed up)</td></tr><tr><td>Settings</td><td>Your preferences, such as backup frequency and the DevTools panel</td><td>No</td></tr></tbody></table></div>
+<p>This storage:</p>
+<ul><li>stays on your device and is <strong>not</strong> synced to your Google account or to any other device;</li><li>is not readable by websites or by other extensions;</li><li>is deleted when you uninstall Cookie Keeper. You can also delete individual backups, unpin or unprotect cookies, and remove block rules at any time.</li></ul>
+<p>Cookie Keeper never stores the addresses of pages you visit.</p>
+<h2>Exports, copies and imports</h2>
+<p>When you <strong>export</strong> or <strong>download</strong> cookies, Cookie Keeper creates a file on your computer. When you <strong>copy</strong> cookies, it puts them on your clipboard. What happens to that file or clipboard text afterwards is up to you. Cookie Keeper does not upload it anywhere.</p>
+<p><strong>Treat exported cookies like passwords.</strong> Anyone who has your login cookies can use your accounts. Never paste them into a website or send them to someone who asks for them.</p>
+<p>When you <strong>import</strong> cookies, Cookie Keeper reads only the text or file you give it, and only adds the cookies it contains to your browser.</p>
+<h2>Permissions and why they're needed</h2>
+<div class="table"><table><thead><tr><th>Permission</th><th>Why</th></tr></thead><tbody><tr><td><code>cookies</code></td><td>To read, create, change and delete cookies</td></tr><tr><td>Access to all websites (<code>&lt;all_urls&gt;</code>)</td><td>Browsers only let extensions manage cookies for sites they have access to. Cookie Keeper doesn't read or change the content of web pages.</td></tr><tr><td><code>webNavigation</code></td><td>To find the frames embedded in the current page, so their cookies can be shown too</td></tr><tr><td><code>storage</code>, <code>unlimitedStorage</code></td><td>To save pins, protected cookies, block rules, settings and backups locally (see above). Backups can be larger than the default storage limit.</td></tr><tr><td><code>alarms</code></td><td>To run scheduled backups, if you turn them on</td></tr><tr><td><code>sidePanel</code></td><td>To show Cookie Keeper in the browser's side panel</td></tr></tbody></table></div>
+<h2>What Cookie Keeper does not do</h2>
+<ul><li>It doesn't send data to the developer or to anyone else, and it makes no network requests.</li><li>It doesn't use analytics, tracking or advertising.</li><li>It doesn't sell, transfer or share user data with third parties.</li><li>It doesn't use or transfer user data for purposes unrelated to its single purpose of managing cookies.</li><li>It doesn't use or transfer user data to determine creditworthiness or for lending purposes.</li><li>It doesn't load or run code from outside the extension.</li></ul>
+<p>The use of information received from browser APIs adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
+<h2>Children</h2>
+<p>Cookie Keeper doesn't knowingly collect any information from anyone, including children.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the updated version will be published at this address with a new "Last updated" date. If a future version of Cookie Keeper ever needed to handle data differently, this policy would be updated before that version was released.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:fifdev@proton.me">fifdev@proton.me</a></p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Cookie Keeper</span>
+      <nav>
+        <a href="./">Home</a>
+        <a href="https://github.com/afieif/cookie-keeper">GitHub</a>
+        <a href="mailto:fifdev@proton.me">fifdev@proton.me</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

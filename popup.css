@@ -85,7 +85,7 @@ input, select, textarea {
   min-width: 0;
 }
 
-textarea { width: 100%; resize: vertical; font-family: var(--mono); font-size: 12px; }
+textarea { width: 100%; resize: vertical; font-family: var(--mono); font-size: 12px; tab-size: 4; }
 input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;

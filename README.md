@@ -6,6 +6,8 @@ and [GitHub issues](https://github.com/Moustachauve/cookie-editor/issues).
 
 No build step. Load it from `chrome://extensions` → Developer mode → **Load unpacked** → this folder.
 
+Website: **https://afieif.github.io/cookie-keeper/** · [Privacy policy](PRIVACY.md)
+
 ## What users asked for → what Cookie Keeper does
 
 | Request | Source | Cookie Keeper |
@@ -44,7 +46,15 @@ No build step. Load it from `chrome://extensions` → Developer mode → **Load 
 - `lib/cookies.js`: `chrome.cookies` wrappers and validation
 - `lib/formats.js`: JSON / Netscape / header import and export (no `chrome.*`, so it can be tested on its own)
 
-## Before publishing
+## Website, store images and packaging
 
-- Name check (Oct 2026): no current Chrome Web Store listing named "Cookie Keeper" was found; search the store once more before submitting.
-- Privacy policy: [PRIVACY.md](PRIVACY.md). Host it at a public URL (for example GitHub Pages) and paste that URL into the store's Privacy tab.
+| Path | What it is |
+|---|---|
+| `docs/` | GitHub Pages site (Settings → Pages → deploy from branch `main`, folder `/docs`) |
+| `docs/privacy.html` | Generated from `PRIVACY.md`. Edit the Markdown, then run `python3 scripts/build_site.py` |
+| `store/listing.md` | Store listing text, permission justifications and privacy answers |
+| `store/*.png`, `store/screenshots/` | Store icon, promo tiles and screenshots. Rebuild with `python3 store/build.py` (needs Google Chrome) |
+| `store/ui/` | Real popup states, saved from the running extension with demo cookies. Used by the store images and the website |
+| `scripts/package.sh` | Builds `dist/cookie-keeper-<version>.zip`, containing only the extension files, for upload |
+
+After changing `popup.css`, run both build scripts so the screenshots and the website match the extension.

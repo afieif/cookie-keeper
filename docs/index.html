@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie Keeper – the cookie editor users asked for</title>
+  <meta name="description" content="A free, open-source cookie editor for Chrome and Edge. View, edit, pin, protect, block, import, export and back up cookies for one site or every site. Nothing leaves your browser.">
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cookie Keeper – the cookie editor users asked for">
+  <meta property="og:description" content="View, edit, pin, protect, block, import, export and back up cookies. Free, open source, and nothing leaves your browser.">
+  <meta property="og:url" content="https://afieif.github.io/cookie-keeper/">
+  <meta property="og:image" content="https://afieif.github.io/cookie-keeper/img/social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="img/icon.svg" alt=""> Cookie Keeper</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#install" class="hide-sm">Install</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/afieif/cookie-keeper">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Free cookie editor for Chrome &amp; Edge</p>
+          <h1>The cookie editor users <em>asked for</em></h1>
+          <p class="lede">View, edit, pin, protect, block, import, export and back up cookies, for one site or for every site. Open source, and nothing ever leaves your browser.</p>
+          <div class="buttons">
+            <!-- Once the store listing is live, point this at it and change the label to "Add to Chrome". -->
+            <a class="button primary" href="#install">Install Cookie Keeper</a>
+            <a class="button" href="https://github.com/afieif/cookie-keeper">View source</a>
+          </div>
+          <p class="note">Chrome Web Store listing coming soon.</p>
+        </div>
+        <div class="ui" style="--h: 580px"><iframe src="ui/list.html" data-h="580" title="Cookie Keeper listing every cookie for shop.example.com" inert loading="eager"></iframe></div>
+      </div>
+    </section>
+
+    <section class="quotes">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built from what <em>reviews</em> asked for</h2>
+          <p>We went through the reviews and issue reports of a popular cookie editor, collected the requests that kept coming up, and built them.</p>
+        </div>
+        <div class="quote-grid">
+          <figure class="quote">
+            <blockquote>Need to export all cookies as JSON? This extension will NOT do that.</blockquote>
+            <cite>Chrome Web Store review, April 2026</cite>
+            <p class="answer"><strong>Done.</strong> Export one site or every cookie in the browser, as JSON, Netscape cookies.txt or a header string.</p>
+          </figure>
+          <figure class="quote">
+            <blockquote>It would be a LOT better if you could whitelist certain cookies against deletion</blockquote>
+            <cite>Chrome Web Store review, July 2026</cite>
+            <p class="answer"><strong>Done.</strong> Pin a cookie and “Delete all” leaves it alone. Protected cookies are kept too.</p>
+          </figure>
+          <figure class="quote">
+            <blockquote>Worked for like 5 minutes then after I imported cookies it completely stopped</blockquote>
+            <cite>Chrome Web Store review, September 2026</cite>
+            <p class="answer"><strong>Done.</strong> Long cookie lists stay fast, and every import tells you which cookies failed and why.</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Everything in one <em>small</em> popup</h2>
+          <p>These are live previews of the real extension, filled with demo cookies.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-copy">
+              <h3>See every cookie, even the hidden ones</h3>
+              <p>Looking cookies up by the page’s address alone misses some of them. Cookie Keeper also shows:</p>
+              <ul>
+                <li>Cookies set on other paths, like <code>/products</code></li>
+                <li>Partitioned (CHIPS) cookies</li>
+                <li>Cookies from sites embedded in the page</li>
+                <li>Changes as they happen, without reopening</li>
+              </ul>
+            </div>
+            <div class="ui" style="--h: 580px"><iframe src="ui/list.html" data-h="580" title="Cookie list" inert loading="lazy"></iframe></div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-copy">
+              <h3>Delete all. Keep what matters.</h3>
+              <p>Pin the cookies you care about, like a login, and “Delete all” skips them. It only ever deletes the cookies you can see, so narrow the list first if you like.</p>
+            </div>
+            <div class="ui" style="--h: 440px"><iframe src="ui/delete.html" data-h="440" title="Delete all, keeping pinned cookies" inert loading="lazy"></iframe></div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-copy">
+              <h3>Protect a cookie. Block the rest.</h3>
+              <ul>
+                <li><strong>Protect</strong> a cookie and any change or deletion by a site is undone straight away.</li>
+                <li><strong>Block</strong> a cookie and it’s deleted the moment a site sets it, by name or for a whole domain.</li>
+                <li>Edit every field: name, value, domain, path, expiry, SameSite, Secure, HttpOnly and partition.</li>
+              </ul>
+            </div>
+            <div class="ui" style="--h: 640px"><iframe src="ui/editor.html" data-h="640" title="Editing a protected cookie" inert loading="lazy"></iframe></div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-copy">
+              <h3>Imports that explain themselves</h3>
+              <p>Paste or drop JSON from other cookie tools, a Playwright <code>storageState</code> file, a Netscape <code>cookies.txt</code>, or a raw <code>Cookie:</code> header. If a cookie can’t be added, you’re told exactly why, instead of seeing “Unknown error”.</p>
+            </div>
+            <div class="ui" style="--h: 560px"><iframe src="ui/import.html" data-h="560" title="Import results" inert loading="lazy"></iframe></div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-copy">
+              <h3>Backups on a schedule</h3>
+              <p>Take a snapshot whenever you like, or every hour, day or week. Restore one with a click or download it as JSON. Backups are stored only in your browser.</p>
+            </div>
+            <div class="ui" style="--h: 500px"><iframe src="ui/backups.html" data-h="500" title="Scheduled backups" inert loading="lazy"></iframe></div>
+          </div>
+        </div>
+
+        <div class="grid" style="margin-top: 48px">
+          <div class="card"><h3>Side panel &amp; DevTools</h3><p>Keep it open beside the page as you switch tabs, or use the Cookies tab in DevTools. You can turn the DevTools tab off.</p></div>
+          <div class="card"><h3>Every site at once</h3><p>Switch between this site, this site plus its subdomains, or every cookie in the browser.</p></div>
+          <div class="card"><h3>Incognito aware</h3><p>Switch between your normal and incognito cookie stores. Incognito cookies are never backed up.</p></div>
+          <div class="card"><h3>Quick copy</h3><p>Copy any value with one click, or copy a whole cookie as JSON.</p></div>
+          <div class="card"><h3>Light &amp; dark</h3><p>Follows your system theme. Every control has a text label, and nothing animates.</p></div>
+          <div class="card"><h3>Safe exports</h3><p>A clear warning reminds you that exported cookies are live logins, a common way people get tricked out of their accounts.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="wrap">
+        <div>
+          <h2>Nothing <em>leaves</em> your browser</h2>
+          <p>Cookie Keeper has no servers and makes no network requests. Your cookies stay on your device, and the code is open so you can check for yourself.</p>
+          <p><a href="privacy.html">Read the privacy policy →</a></p>
+        </div>
+        <ul>
+          <li>No analytics or tracking</li>
+          <li>No ads, no accounts</li>
+          <li>No data sold or shared</li>
+          <li>Open source on GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Install</h2>
+          <p>Cookie Keeper is on its way to the Chrome Web Store. Until then, you can install it from source in about a minute. It works in Chrome, Edge, Brave and other Chromium browsers.</p>
+        </div>
+        <ol class="steps">
+          <li><div><strong>Download the code</strong><p>On <a href="https://github.com/afieif/cookie-keeper">GitHub</a>, choose <em>Code → Download ZIP</em> and unzip it, or run <code>git clone https://github.com/afieif/cookie-keeper</code>.</p></div></li>
+          <li><div><strong>Open the extensions page</strong><p>Go to <code>chrome://extensions</code> (or <code>edge://extensions</code>) and turn on <em>Developer mode</em>.</p></div></li>
+          <li><div><strong>Load it</strong><p>Click <em>Load unpacked</em> and choose the <code>cookie-keeper</code> folder. Then pin it to your toolbar.</p></div></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Cookie Keeper</span>
+      <nav>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/afieif/cookie-keeper">GitHub</a>
+        <a href="https://github.com/afieif/cookie-keeper/issues">Report an issue</a>
+        <a href="mailto:fifdev@proton.me">fifdev@proton.me</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // The previews are the real 600px-wide popup; scale each one to fit its column.
+    for (const box of document.querySelectorAll('.ui')) {
+      const frame = box.querySelector('iframe');
+      const height = Number(frame.dataset.h);
+      const fit = () => {
+        const scale = Math.min(1.1, box.clientWidth / 600);
+        frame.style.height = `${height}px`;
+        frame.style.transform = `scale(${scale})`;
+        box.style.height = `${height * scale}px`;
+      };
+      new ResizeObserver(fit).observe(box);
+    }
+  </script>
+</body>
+</html>
