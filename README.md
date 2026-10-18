@@ -1,63 +1,37 @@
-# Cookie Keeper – Cookie Editor
+# Cookie Keeper
 
-A Manifest V3 cookie editor for Chrome and Edge, built around what users ask for in
-[Cookie-Editor's reviews](https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm/reviews)
-and [GitHub issues](https://github.com/Moustachauve/cookie-editor/issues).
+A free, open-source cookie editor for Chrome, Edge and other Chromium browsers, built from what users kept asking for in cookie editor reviews.
 
-No build step. Load it from `chrome://extensions` → Developer mode → **Load unpacked** → this folder.
+**[Website](https://afieif.github.io/cookie-keeper/)** · [Privacy policy](https://afieif.github.io/cookie-keeper/privacy.html) · [Report an issue](https://github.com/afieif/cookie-keeper/issues)
 
-Website: **https://afieif.github.io/cookie-keeper/** · [Privacy policy](PRIVACY.md)
+![Cookie Keeper listing every cookie for a site, including partitioned and embedded-site cookies](store/screenshots/1-every-cookie.png)
 
-## What users asked for → what Cookie Keeper does
+## Features
 
-| Request | Source | Cookie Keeper |
-|---|---|---|
-| Export/import **all** cookies, not just the current site | review (Apr 2026), #117, #305 | Scope picker (This site / Site + subdomains / All sites); export "Every cookie, all sites" |
-| Keep some cookies when using "Delete all" | review (Jul 2026) | Pin (☆) a cookie: it stays at the top and "Delete all" skips it, as do protected cookies |
-| Control over subdomain cookies | review (Jul 2026) | "This site" vs "Site + subdomains" scope; Delete all only touches what's listed |
-| Cookies missing from the list | #172, #249, #197 | Finds cookies on other paths, partitioned (CHIPS) cookies and cookies from embedded iframes |
-| List goes stale | #278 | Updates live via `cookies.onChanged`, without wiping an edit in progress |
-| Import fails with "Unknown error" | #71, #85, #100, #103 | Shows a result for each cookie with the reason it failed (SameSite=None without Secure, expiry in the past, `__Host-` rules…) |
-| Can't import from a file | review | The file picker opens in a tab (pickers close popups); you can also drag and drop a file |
-| Breaks after importing lots of cookies | review (Sep 2026) | Draws the list 200 rows at a time |
-| Quick copy of a value | #180 | Copy button on every row; "Copy JSON" per cookie |
-| Pin important cookies | #182 | ☆ pin |
-| Set a path on new cookies | #200 | Full editor: path, expiry, SameSite, Secure, HttpOnly, host-only, partition |
-| Read-only cookies | #12 | **Protect**: a service worker reverts any change or deletion by a site |
-| Block cookies | #104 | **Block**: deleted as soon as a site sets it, by name or `*`, subdomains included |
-| Incognito | #57 | Store picker when an incognito store exists (`"incognito": "spanning"`) |
-| Netscape subdomain flag wrong | #110 | Netscape export writes the flag from `hostOnly` and adds the `#HttpOnly_` prefix |
-| Formats from other tools | — | Imports Cookie-Editor/EditThisCookie JSON, Playwright `storageState`, Netscape cookies.txt and `Cookie:` header strings |
-| People tricked into handing over cookies | #303 | The export panel warns that cookies are live logins |
-| Icons without labels, animations | #4, #79, #141 | Buttons have text or ARIA labels, no animations, follows the system light/dark theme |
-| Back up cookies on a schedule | #32 | **Backups**: hourly, daily or weekly snapshots, plus "Back up now"; keep the last N, optionally only some domains; restore or download as JSON |
-| Popup closes when you click away | — | **Side panel** that follows the active tab, plus "Open in tab" |
-| DevTools tab: some want it, some don't | #90, #91 | "Cookies" panel in DevTools, which can be switched off in Settings (⚙) |
+- **Every cookie:** one site, a site and its subdomains, or every site, including ones that are easy to miss: other paths, partitioned (CHIPS) cookies and cookies from embedded sites.
+- **Full editor:** change every field, copy a value in one click, search by name, value or domain.
+- **Pin:** keep important cookies at the top, and "Delete all" leaves them alone.
+- **Protect:** if a site changes or deletes a protected cookie, it's put back straight away.
+- **Block:** a blocked cookie is deleted the moment a site sets it.
+- **Import & export:** JSON, Netscape cookies.txt or a header string, for one site or all of them. Failed imports tell you why.
+- **Backups:** back up now or on a schedule, and restore with one click.
+- **Your way:** popup, side panel, full tab or a DevTools tab; incognito support; light and dark themes.
 
-## Layout
+## Privacy
 
-- `manifest.json`: permissions `cookies`, `storage`, `unlimitedStorage` (for backups), `webNavigation` (to read iframe URLs), `alarms`, `sidePanel`, plus `<all_urls>`
-- `background.js`: enforces Protect and Block rules
-- `popup.html|css|js`: the UI; the same page is used as a full tab (`?tabId=…`) and in DevTools (`?mode=devtools`)
-- `sidepanel.html`: same as `popup.html` with `data-mode="side"`; keep the two in sync
-- `devtools.html|js`: registers the DevTools panel
-- `lib/backups.js`: snapshot storage, used by the popup and the scheduled alarm
-- `icons/icon.svg`: icon source; the PNGs are rendered from it
-- `lib/cookies.js`: `chrome.cookies` wrappers and validation
-- `lib/formats.js`: JSON / Netscape / header import and export (no `chrome.*`, so it can be tested on its own)
+Cookie Keeper has no servers and makes no network requests. No analytics, no ads, no accounts: your cookies never leave your browser. See the [privacy policy](PRIVACY.md).
 
-## Website, store images and packaging
+## Install
 
-| Path | What it is |
-|---|---|
-| `docs/` | GitHub Pages site (Settings → Pages → deploy from branch `main`, folder `/docs`) |
-| `docs/privacy.html` | Generated from `PRIVACY.md`. Edit the Markdown, then run `python3 scripts/build_site.py` |
-| `store/listing.md` | Store listing text, permission justifications and privacy answers |
-| `store/*.png`, `store/screenshots/` | Store icon, promo tiles and screenshots. Rebuild with `python3 store/build.py` (needs Google Chrome) |
-| `store/ui/` | Real popup states, saved from the running extension with demo cookies. Used by the store images and the website |
-| `scripts/package.sh` | Builds `dist/cookie-keeper-<version>.zip`, containing only the extension files, for upload |
+Cookie Keeper is coming to the Chrome Web Store. Until then:
 
-After changing `popup.css`, run both build scripts so the screenshots and the website match the extension.
+1. Download this repository (**Code → Download ZIP**) and unzip it.
+2. Open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and choose the folder.
+
+## Contributing
+
+Bug reports and feature requests are welcome in [issues](https://github.com/afieif/cookie-keeper/issues). For the project layout and build scripts, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
