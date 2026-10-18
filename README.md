@@ -17,6 +17,13 @@ A free, open-source cookie editor for Chrome, Edge and other Chromium browsers, 
 - **Backups:** back up now or on a schedule, and restore with one click.
 - **Your way:** popup, side panel, full tab or a DevTools tab; incognito support; light and dark themes.
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Delete all, keeping pinned and protected cookies](store/screenshots/2-delete-all.png) | ![Editing a protected cookie](store/screenshots/3-protect.png) |
+| ![Import results that explain each failed cookie](store/screenshots/4-import.png) | ![Scheduled backups in dark mode](store/screenshots/5-backups.png) |
+
 ## Privacy
 
 Cookie Keeper has no servers and makes no network requests. No analytics, no ads, no accounts: your cookies never leave your browser. See the [privacy policy](PRIVACY.md).
