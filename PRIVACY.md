@@ -72,4 +72,4 @@ If this policy changes, the updated version will be published at this address wi
 
 ## Contact
 
-Questions about this policy: **[CONTACT EMAIL OR SUPPORT URL]**
+Questions about this policy: [fifdev@proton.me](mailto:fifdev@proton.me)

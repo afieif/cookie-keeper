@@ -47,4 +47,4 @@ No build step. Load it from `chrome://extensions` → Developer mode → **Load 
 ## Before publishing
 
 - Name check (Oct 2026): no current Chrome Web Store listing named "Cookie Keeper" was found; search the store once more before submitting.
-- Privacy policy: [PRIVACY.md](PRIVACY.md). Fill in the contact line, host it at a public URL (for example GitHub Pages) and paste that URL into the store's Privacy tab.
+- Privacy policy: [PRIVACY.md](PRIVACY.md). Host it at a public URL (for example GitHub Pages) and paste that URL into the store's Privacy tab.
