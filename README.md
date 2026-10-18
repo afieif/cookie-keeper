@@ -58,3 +58,7 @@ Website: **https://afieif.github.io/cookie-keeper/** · [Privacy policy](PRIVACY
 | `scripts/package.sh` | Builds `dist/cookie-keeper-<version>.zip`, containing only the extension files, for upload |
 
 After changing `popup.css`, run both build scripts so the screenshots and the website match the extension.
+
+## License
+
+[MIT](LICENSE)
