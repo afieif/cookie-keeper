@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie Keeper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="site"><span class="muted">Cookies for</span> <strong id="site">…</strong></div>
+      <div class="views">
+        <button id="openSide" class="ghost" title="Keep Cookie Keeper open beside the page">Side panel</button>
+        <button id="openTab" class="ghost" title="Open Cookie Keeper in a full browser tab">Open in tab ↗</button>
+      </div>
+    </div>
+    <div class="filters">
+      <select id="scope" aria-label="Which cookies to show">
+        <option value="site">This site</option>
+        <option value="subdomains">Site + subdomains</option>
+        <option value="all">All sites</option>
+      </select>
+      <select id="store" aria-label="Cookie store" hidden></select>
+      <input id="search" type="search" placeholder="Search name, value or domain   /" aria-label="Search cookies" spellcheck="false">
+    </div>
+    <nav class="toolbar">
+      <button data-panel="add">+ Add</button>
+      <button data-panel="import">Import</button>
+      <button data-panel="export">Export</button>
+      <button data-panel="blocked">Blocked</button>
+      <button data-panel="backups">Backups</button>
+      <button data-panel="delete" class="danger-text">Delete all…</button>
+      <button data-panel="settings" class="settings" title="Settings" aria-label="Settings">⚙</button>
+    </nav>
+  </header>
+  <section id="panel" hidden></section>
+  <p id="summary" class="muted"></p>
+  <ul id="list"></ul>
+  <p id="status" role="status" aria-live="polite"></p>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
